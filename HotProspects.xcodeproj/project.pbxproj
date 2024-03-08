@@ -15,6 +15,7 @@
 		40E635682B6F2FAE009CEC19 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E635672B6F2FAE009CEC19 /* MeView.swift */; };
 		40E6356A2B6F328E009CEC19 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E635692B6F328E009CEC19 /* Prospect.swift */; };
 		40E6356D2B79D812009CEC19 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 40E6356C2B79D812009CEC19 /* CodeScanner */; };
+		40E635702B9AE6B2009CEC19 /* EditProspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E6356F2B9AE6B2009CEC19 /* EditProspectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		40E635672B6F2FAE009CEC19 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		40E635692B6F328E009CEC19 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		40E6356E2B82DBC1009CEC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		40E6356F2B9AE6B2009CEC19 /* EditProspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProspectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				4002BA262B6B487200FE39B9 /* ContentView.swift */,
 				40E635692B6F328E009CEC19 /* Prospect.swift */,
 				40E635652B6F2FA4009CEC19 /* ProspectsView.swift */,
+				40E6356F2B9AE6B2009CEC19 /* EditProspectView.swift */,
 				40E635672B6F2FAE009CEC19 /* MeView.swift */,
 				4002BA282B6B487400FE39B9 /* Assets.xcassets */,
 				4002BA2A2B6B487400FE39B9 /* Preview Content */,
@@ -161,6 +164,7 @@
 				40E635662B6F2FA4009CEC19 /* ProspectsView.swift in Sources */,
 				4002BA272B6B487200FE39B9 /* ContentView.swift in Sources */,
 				4002BA252B6B487200FE39B9 /* HotProspectsApp.swift in Sources */,
+				40E635702B9AE6B2009CEC19 /* EditProspectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
