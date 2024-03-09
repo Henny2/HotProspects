@@ -42,6 +42,11 @@ struct ProspectsView: View {
                             
                             Text(prospect.emailAddress)
                                 .foregroundStyle(.secondary)
+                            HStack{
+                                Text((prospect.lastContacted != nil) ? "last contacted: \(prospect.lastContacted?.formatted() ?? "")" : "")
+                                    .font(.footnote)
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                         Spacer()
                         if(filter == .none && prospect.isContacted){
@@ -56,11 +61,13 @@ struct ProspectsView: View {
                     if prospect.isContacted {
                         Button("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark"){
                             prospect.isContacted.toggle()
+                            prospect.lastContacted = nil
                         }
                         .tint(.blue)
                     } else {
                         Button("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark"){
                             prospect.isContacted.toggle()
+                            prospect.lastContacted = Date()
                         }
                         .tint(.green)
                         
@@ -89,7 +96,7 @@ struct ProspectsView: View {
                     }
                 }
                 .sheet(isPresented: $isShowingScanner) {
-                    CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson \n paul@hackingWithSwift.com", completion: handleScan)
+                    CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson \npaul@hackingWithSwift.com", completion: handleScan)
                 }
         }
     }
@@ -115,7 +122,7 @@ struct ProspectsView: View {
             guard details.count == 2 else {
                 return // only proceed if you got two pieces of information here
             }
-            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
+            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false, lastContacted: nil)
             modelContext.insert(person)
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")

@@ -19,5 +19,5 @@ struct EditProspectView: View {
 }
 
 #Preview {
-    EditProspectView(prospect: Prospect(name: "Henny", emailAddress: "Henny@something.com", isContacted: true))
+    EditProspectView(prospect: Prospect(name: "Henny", emailAddress: "Henny@something.com", isContacted: true, lastContacted: nil))
 }

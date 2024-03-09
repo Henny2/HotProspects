@@ -6,6 +6,7 @@
 //
 
 import SwiftData
+import SwiftUI
 
 // defining data model for one prospect
 
@@ -14,10 +15,12 @@ class Prospect {
     var name: String
     var emailAddress: String
     var isContacted: Bool
+    var lastContacted: Date?
     
-    init(name: String, emailAddress: String, isContacted: Bool) {
+    init(name: String, emailAddress: String, isContacted: Bool, lastContacted: Date?) {
         self.name = name
         self.emailAddress = emailAddress
         self.isContacted = isContacted
+        self.lastContacted = lastContacted
     }
 }
