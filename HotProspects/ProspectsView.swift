@@ -101,7 +101,7 @@ struct ProspectsView: View {
         }
     }
     
-    init(filter: FilterType){
+    init(filter: FilterType, sortOrder: [SortDescriptor<Prospect>]){
         self.filter = filter
         
         if filter != .none {
@@ -109,7 +109,7 @@ struct ProspectsView: View {
             
             _prospects = Query(filter: #Predicate{
                 $0.isContacted == showdContactedOnly
-            }, sort: [SortDescriptor(\Prospect.name)])
+            }, sort: sortOrder)
         }
     }
     
@@ -171,6 +171,6 @@ struct ProspectsView: View {
 }
 
 #Preview {
-    ProspectsView(filter: .none)
+    ProspectsView(filter: .none, sortOrder: [SortDescriptor(\Prospect.name)])
         .modelContainer(for: Prospect.self)
 }
